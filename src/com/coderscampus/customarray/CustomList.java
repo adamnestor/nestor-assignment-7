@@ -22,7 +22,7 @@ public interface CustomList<T> {
      * @throws IndexOutOfBoundsException
      */
 
-//    boolean add (int index, T item) throws IndexOutOfBoundsException;
+    boolean add (int index, T item) throws IndexOutOfBoundsException;
 
     /**
      * This method should return the size of the <code>CustomList</code>
@@ -51,6 +51,6 @@ public interface CustomList<T> {
      * @throws IndexOutOfBoundsException
      */
 
-//    T remove(int index) throws IndexOutOfBoundsException;
+    T remove(int index) throws IndexOutOfBoundsException;
 
 }
