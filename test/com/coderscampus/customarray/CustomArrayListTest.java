@@ -40,13 +40,10 @@ class CustomArrayListTest {
 		customList.add("John");
 		
 		customList.add(2, "Luke");
-		String expectedString1 = customList.get(2);
-		String expectedString2 = customList.get(3);
-		Integer expectedSize = customList.getSize();
 		
-		assertEquals("Luke", expectedString1);
-		assertEquals("John", expectedString2);
-		assertEquals(4, expectedSize);
+		assertEquals("Luke", customList.get(2));
+		assertEquals("John", customList.get(3));
+		assertEquals(4, customList.getSize());
 			
 	}
 
@@ -69,9 +66,7 @@ class CustomArrayListTest {
 		customList.add("Luke");
 		customList.add("John");
 		
-		String expectedString = customList.get(2);
-		
-		assertEquals("Luke", expectedString);
+		assertEquals("Luke", customList.get(2));
 		
 	}
 	
@@ -85,11 +80,8 @@ class CustomArrayListTest {
 		
 		customList.remove(0);
 		
-		Integer expectedResult = customList.get(0);
-		Integer expectedSize = customList.getSize();
-		
-		assertEquals(100, expectedResult);
-		assertEquals(3, expectedSize);
+		assertEquals(100, customList.get(0));
+		assertEquals(3, customList.getSize());
 	}
 	
 	@Test

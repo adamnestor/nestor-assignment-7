@@ -27,8 +27,9 @@ public class CustomArrayList<T> implements CustomList<T> {
 
 		ensureCapacity();
 		size++;
-		for (int i = index; i < size; i++) {
-			items[index + 1] = items[index];
+		
+		for (int i = size - 1; i > index; i--) {
+			items[i] = items[i-1];
 		}
 		items[index] = item;
 
@@ -64,7 +65,7 @@ public class CustomArrayList<T> implements CustomList<T> {
 		@SuppressWarnings("unchecked")
 		T element = (T) items[index];
 
-		for (int i = index; i < size; i++) {
+		for (int i = index; i < size - 1; i++) {
 			items[index] = items[index + 1];
 		}
 		size--;
