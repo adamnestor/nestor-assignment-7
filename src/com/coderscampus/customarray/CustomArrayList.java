@@ -26,12 +26,13 @@ public class CustomArrayList<T> implements CustomList<T> {
 		}
 
 		ensureCapacity();
-		size++;
 		
-		for (int i = size - 1; i > index; i--) {
+		for (int i = size; i > index; i--) {
 			items[i] = items[i-1];
 		}
+		
 		items[index] = item;
+		size++;
 
 		return true;
 	}
@@ -66,8 +67,9 @@ public class CustomArrayList<T> implements CustomList<T> {
 		T element = (T) items[index];
 
 		for (int i = index; i < size - 1; i++) {
-			items[index] = items[index + 1];
+			items[i] = items[i + 1];
 		}
+		items[size - 1] = null;
 		size--;
 
 		return element;

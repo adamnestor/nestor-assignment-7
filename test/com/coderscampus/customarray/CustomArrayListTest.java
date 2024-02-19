@@ -60,28 +60,30 @@ class CustomArrayListTest {
 	
 	@Test
 	void should_get_index_from_list() {
-		CustomList<String> customList = new CustomArrayList<>();
-		customList.add("Matthew");
-		customList.add("Mark");
-		customList.add("Luke");
-		customList.add("John");
+		CustomList<Integer> customList = new CustomArrayList<>();
 		
-		assertEquals("Luke", customList.get(2));
+		for (int i = 0; i < 10; i++) {
+			customList.add(i);
+		}
+		
+		customList.add(3,8);
+		
+		assertEquals(11, customList.getSize());
+		assertEquals(8, customList.get(3));
 		
 	}
 	
 	@Test
 	void should_remove_index_from_list() {
 		CustomList<Integer> customList = new CustomArrayList<>();
-		customList.add(10);
-		customList.add(100);
-		customList.add(1000);
-		customList.add(10000);
 		
-		customList.remove(0);
+		for (int i = 0; i < 10; i++) {
+			customList.add(i);
+		}
 		
-		assertEquals(100, customList.get(0));
-		assertEquals(3, customList.getSize());
+		customList.remove(7);
+		
+		assertEquals(8, customList.get(7));
 	}
 	
 	@Test
